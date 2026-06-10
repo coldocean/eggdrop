@@ -10,21 +10,42 @@
 namespace eval wunderbar {
     variable channels {#lobby #help #wunderbar}
     variable nspassfile "/opt/eggdrop/data/nickserv.pass"
+    # Email used if the bot has to self-register its nick with NickServ.
+    variable regemail "wunderkind@wunderbar.lv"
+}
+
+# Read the NickServ password from the file the entrypoint wrote.
+proc wunderbar::nspass {} {
+    variable nspassfile
+    if {![file exists $nspassfile]} { return "" }
+    set fh [open $nspassfile r]
+    set pass [string trim [read $fh]]
+    close $fh
+    return $pass
 }
 
 # --- identify to NickServ once we're connected ---
 proc wunderbar::nickserv_identify {type} {
-    variable nspassfile
-    if {![file exists $nspassfile]} {
-        putlog "wunderbar: no NickServ password file, skipping IDENTIFY."
+    set pass [wunderbar::nspass]
+    if {$pass eq ""} {
+        putlog "wunderbar: no NickServ password, skipping IDENTIFY."
         return
     }
-    set fh [open $nspassfile r]
-    set pass [string trim [read $fh]]
-    close $fh
-    if {$pass eq ""} { return }
     putquick "PRIVMSG NickServ :IDENTIFY $pass"
     putlog "wunderbar: sent NickServ IDENTIFY."
+}
+
+# If NickServ tells us the nick isn't registered, register it so future
+# IDENTIFYs (and ChanServ ops) work. Atheme: REGISTER <password> <email>.
+bind notc - "*not a registered*" wunderbar::ns_notice
+bind notc - "*isn't registered*"  wunderbar::ns_notice
+proc wunderbar::ns_notice {nick uhost hand text {dest ""}} {
+    if {![string match -nocase "NickServ*" $nick]} { return }
+    variable regemail
+    set pass [wunderbar::nspass]
+    if {$pass eq ""} { return }
+    putlog "wunderbar: nick not registered — sending NickServ REGISTER."
+    putquick "PRIVMSG NickServ :REGISTER $pass $regemail"
 }
 
 # When fully connected to the server (event 'init-server' fires after MOTD).
