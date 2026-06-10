@@ -7,6 +7,7 @@ namespace eval help {
         "\00310\002!help\017 / \00310\002!commands\017  — this menu"
         "\00310\002!seen <nick>\017      — when someone was last active"
         "\00310\002!stats\017            — channel line counts & top talkers"
+        "\00310\002!admin\017            — owner commands (op/kick/ban/topic/say…)"
         "\0033Automatic:\017 greets joiners, posts \002link titles\017, keeps ops, anti-flood/anti-spam."
         "\0033Support:\017 ask in \00310#help\017 — join IRC server for support and questions: \002irc.wunderbar.lv port:52947\017"
     }
