@@ -36,7 +36,7 @@ FROM debian:trixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
- && apt-get install -y --no-install-recommends tcl libssl3 zlib1g ca-certificates \
+ && apt-get install -y --no-install-recommends tcl libssl3 zlib1g ca-certificates gosu \
  && rm -rf /var/lib/apt/lists/* \
  && useradd -m -d /opt/eggdrop -s /usr/sbin/nologin eggdrop || true
 

@@ -18,6 +18,14 @@ DATA="$EGG/data"
 
 mkdir -p "$DATA" "$EGG/logs"
 
+# Railway mounts the persistent volume at $DATA owned by root. Eggdrop refuses
+# to run as root, so fix ownership of the writable dirs then step down to the
+# unprivileged 'eggdrop' user via gosu (re-exec).
+if [ "$(id -u)" = "0" ]; then
+    chown -R eggdrop:eggdrop "$EGG" 2>/dev/null || true
+    exec gosu eggdrop "$0" "$@"
+fi
+
 IRC_SERVER="${IRC_SERVER:-yamanote.proxy.rlwy.net}"
 IRC_PORT="${IRC_PORT:-52947}"
 DCC_PORT="${PORT:-3333}"
