@@ -30,15 +30,25 @@ echo ">> Running as uid $(id -u) ($(id -un))."
 
 IRC_SERVER="${IRC_SERVER:-yamanote.proxy.rlwy.net}"
 IRC_PORT="${IRC_PORT:-52947}"
-DCC_PORT="${PORT:-3333}"
+# Fixed DCC/telnet partyline port (matches the Railway TCP proxy target).
+DCC_PORT="${DCC_PORT:-3333}"
 
 echo ">> WUNDERkind starting: uplink ${IRC_SERVER}:${IRC_PORT}, DCC port ${DCC_PORT}"
+
+# Resolve the public DCC proxy host to an IP for nat-ip (DCC handshakes need
+# the dotted IP, not a hostname). Falls back to empty if unset/unresolvable.
+NAT_IP=""
+if [ -n "${DCC_HOST:-}" ]; then
+    NAT_IP="$(getent hosts "$DCC_HOST" | awk '{print $1; exit}')"
+    echo ">> DCC proxy ${DCC_HOST} -> nat-ip ${NAT_IP:-<unresolved>}"
+fi
 
 # Substitute the placeholders in the config.
 sed -i \
     -e "s/__IRC_SERVER__/${IRC_SERVER}/g" \
     -e "s/__IRC_PORT__/${IRC_PORT}/g" \
     -e "s/__DCC_PORT__/${DCC_PORT}/g" \
+    -e "s/__NAT_IP__/${NAT_IP}/g" \
     "$CONF"
 
 # Write the NickServ password out for wunderbar.tcl (if provided).
