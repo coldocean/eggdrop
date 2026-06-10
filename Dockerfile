@@ -35,7 +35,10 @@ RUN curl -fsSL "https://ftp.eggheads.org/pub/eggdrop/source/1.9/eggdrop-${EGGDRO
 FROM debian:trixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
+# Cache-bust token — bump to force the runtime layers to rebuild.
+ARG RUNTIME_CACHEBUST=2
+RUN echo "cachebust ${RUNTIME_CACHEBUST}" \
+ && apt-get update \
  && apt-get install -y --no-install-recommends tcl libssl3 zlib1g ca-certificates gosu \
  && rm -rf /var/lib/apt/lists/* \
  && useradd -m -d /opt/eggdrop -s /usr/sbin/nologin eggdrop || true

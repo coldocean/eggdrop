@@ -22,9 +22,11 @@ mkdir -p "$DATA" "$EGG/logs"
 # to run as root, so fix ownership of the writable dirs then step down to the
 # unprivileged 'eggdrop' user via gosu (re-exec).
 if [ "$(id -u)" = "0" ]; then
+    echo ">> Running as root — fixing perms and stepping down to 'eggdrop' user."
     chown -R eggdrop:eggdrop "$EGG" 2>/dev/null || true
     exec gosu eggdrop "$0" "$@"
 fi
+echo ">> Running as uid $(id -u) ($(id -un))."
 
 IRC_SERVER="${IRC_SERVER:-yamanote.proxy.rlwy.net}"
 IRC_PORT="${IRC_PORT:-52947}"
