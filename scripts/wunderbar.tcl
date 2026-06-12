@@ -8,7 +8,17 @@
 # /opt/eggdrop/data/nickserv.pass (kept out of the repo / config).
 
 namespace eval wunderbar {
-    variable channels {#lobby #help #wunderbar}
+    variable channels
+    # channel list is env-driven (BOT_CHANNELS, space/comma separated);
+    # falls back to the four core Wunderbar channels.
+    set _ch ""
+    if {[info exists ::env(BOT_CHANNELS)]} { set _ch $::env(BOT_CHANNELS) }
+    if {[string trim $_ch] eq ""} { set _ch "#lobby #help #wunderbar #Liepaja" }
+    set channels {}
+    foreach c [split [string map {, " "} $_ch]] {
+        set c [string trim $c]
+        if {$c ne ""} { lappend channels $c }
+    }
     variable nspassfile "/opt/eggdrop/data/nickserv.pass"
     # Email used if the bot has to self-register its nick with NickServ.
     variable regemail "wunderkind@wunderbar.lv"
