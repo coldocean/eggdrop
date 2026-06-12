@@ -12,7 +12,7 @@ namespace eval greet {
     variable default "\0033Welcome %nick%\017 to \00310%chan%\017! Have a great time on \002Wunderbar\017."
 
     # extra hello line sent after the greeting (every channel)
-    variable hello "\0030,6 \002HELLO %nick% \002 \017 and don't forget to wear appropriate \0034\002protection kit\017 when you are \00308\002LEARNING\017. \0030,2 colourful website \017 \002VISIT:\017 \00312\037https://demon.digitalslayer.com\017"
+    variable hello "\0030,6 \002HELLO %nick% \002 \017 \00304and \00307don't \00308forget \00309to \00303wear \00310appropriate \0034\002protection kit\017 \00306when \00313you \00302are \00308\002LEARNING\017\00304! \0030,2 \002VISIT:\017 \00312\037https://demon.digitalslayer.com\017"
 }
 
 bind join - * greet::on_join
