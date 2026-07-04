@@ -12,6 +12,17 @@ namespace eval greet {
     variable default "\0033Welcome %nick%\017 to \00310%chan%\017! Have a great time on \002Wunderbar\017."
 }
 
+# is this nick an IRC operator? (global oper, e.g. FunT / deemah / lor2demon)
+proc greet::is_ircop {nick chan} {
+    if {[catch {set r [isircop $nick $chan]}] == 0 && $r} { return 1 }
+    if {[onchan $nick $chan]} {
+        if {[catch {set fl [getchanflags $nick $chan]}] == 0} {
+            if {[string match "*server*" [string tolower $fl]]} { return 1 }
+        }
+    }
+    return 0
+}
+
 bind join - * greet::on_join
 proc greet::on_join {nick uhost hand chan} {
     variable msgs
@@ -19,6 +30,8 @@ proc greet::on_join {nick uhost hand chan} {
     # don't greet the bot itself or services
     if {$nick eq $::botnick} { return }
     if {[string match -nocase "*Serv" $nick]} { return }
+    # don't greet IRC operators — boss handles their greeting exclusively
+    if {[greet::is_ircop $nick $chan]} { return }
     set ch [string tolower $chan]
     if {[info exists msgs($ch)]} {
         set m $msgs($ch)
