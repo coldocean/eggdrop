@@ -23,24 +23,10 @@ proc greet::is_ircop {nick chan} {
     return 0
 }
 
-bind join - * greet::on_join
+# ALL welcome messages are SILENT now. boss is the only bot that greets, and
+# only real channel operators (+o). WUNDERkind no longer greets anyone on join.
 proc greet::on_join {nick uhost hand chan} {
-    variable msgs
-    variable default
-    # don't greet the bot itself or services
-    if {$nick eq $::botnick} { return }
-    if {[string match -nocase "*Serv" $nick]} { return }
-    # don't greet IRC operators — boss handles their greeting exclusively
-    if {[greet::is_ircop $nick $chan]} { return }
-    set ch [string tolower $chan]
-    if {[info exists msgs($ch)]} {
-        set m $msgs($ch)
-    } else {
-        set m $default
-    }
-    set m [string map [list %nick% $nick %chan% $chan] $m]
-    # small delay so the greeting lands after the join is visible
-    utimer 1 [list putserv "PRIVMSG $chan :$m"]
+    return
 }
 
-putlog "greet.tcl loaded."
+putlog "greet.tcl loaded (greeting DISABLED — boss handles op greetings only)."
