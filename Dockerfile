@@ -35,6 +35,10 @@ RUN curl -fsSL "https://ftp.eggheads.org/pub/eggdrop/source/1.9/eggdrop-${EGGDRO
 FROM debian:trixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
+# UTF-8 locale so Tcl's `encoding system` defaults to utf-8 and `source`
+# reads the Cyrillic script files correctly (belt-and-suspenders alongside
+# the explicit `encoding system utf-8` in eggdrop.conf).
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 # Cache-bust token — bump to force the runtime layers to rebuild.
 ARG RUNTIME_CACHEBUST=2
 RUN echo "cachebust ${RUNTIME_CACHEBUST}" \
