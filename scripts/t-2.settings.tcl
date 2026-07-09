@@ -363,11 +363,11 @@ set t2(l-match) "3"
 
 # set the text to use when someone reaches the point limit for the day #
 # set this empty to not say anything # %n = nick # %l = point limit #
-set t2(l-stxt) "You have reached the daily point limit of %l."
+set t2(l-stxt) "Вы достигли дневного лимита очков: %l."
 
 # set the reminder text to use when someone answers correct but is already limited #
 # set this empty to not say anything # %n = nick # %l = point limit #
-set t2(l-rtxt) "Sorry, you have already reached the point limit for today."
+set t2(l-rtxt) "Извините, вы уже достигли лимита очков на сегодня."
 
 # set the max times to remind someone that they have reached the daily limit #
 # set this to "0" to not do reminders #
@@ -481,12 +481,12 @@ set t2(randad) "4"     ;# how often to show random ad (by question count) (0=off
 set t2(rndlin) {
 
 
-Think a Q&A is incorrect? It can't be the bot is always right. hehe
-Welcome to Our Channel, kick back and play some Trivia!!
-Trivia Commands:  ~ Will Show a Hint, q Will Repeat the Current Question
-Public Commands: .topday .topday20 .topweek .topweek20 .topmonth .topmonth20 .topever .topever20 .version .info .commands .rules .time .webstats .mystats & .stats <nick>
-Auto-Voice for Top Players This Week & This Month.
-BogusTrivia by Spike^^.  Get your copy at mytclscripts.com !
+Думаешь вопрос неверный? Не может быть — бот всегда прав. хехе
+Добро пожаловать на наш канал, расслабься и играй в викторину!!
+Команды викторины:  ~ покажет подсказку, q повторит текущий вопрос
+Публичные команды: .topday .topday20 .topweek .topweek20 .topmonth .topmonth20 .topever .topever20 .version .info .commands .rules .time .webstats .mystats & .stats <nick>
+Авто-voice для топ-игроков недели и месяца.
+BogusTrivia от Spike^^.  Забери свою копию на mytclscripts.com !
 
 
 }  ;##  END Random Ad Lines ! ##  END USER SETTINGS ##  END USER SETTINGS ##
@@ -671,7 +671,7 @@ set t2(g-same) "10"
 #                            :  %1=themecolor1  %2=themecolor2  #
 set t2(g-say) {
 
-%1 Welcome to %c%2 %n 
+%1 Добро пожаловать в %c%2 %n 
 
 } ;#  END On-Join Greeting Line(s) ! #
 
@@ -682,7 +682,7 @@ set t2(g-say) {
 #   %n = a list of all nicks involved in the join flood.     #
 set t2(g-fludsay) {
 
-%2 [%n] %1 Welcome to %c 
+%2 [%n] %1 Добро пожаловать в %c 
 
 } ;#  END Join Flood Greeting Line(s) ! #
 
@@ -827,18 +827,18 @@ set t2(p-other) {
 
 :TRIGS: .commands .boguscommands
 
-%1 Public Commands: .topday .topday20 .topweek .topweek20 .topmonth .topmonth20 .topever .topever20 .version .info .commands .rules .time .webstats .mystats & .stats <nick> 
+%1 Публичные команды: .topday .topday20 .topweek .topweek20 .topmonth .topmonth20 .topever .topever20 .version .info .commands .rules .time .webstats .mystats & .stats <nick> 
 
 :TRIGS: .rules .bogusrules :FLAGS: -
 
-%2 Welcome to %c please follow the channel rules and enjoy the game. 
-%2 Be courteous of other players. 
-%2 Refrain from vulgar language when possible. 
-%2 If you have issues please message a channel op. 
+%2 Добро пожаловать в %c, соблюдайте правила канала и наслаждайтесь игрой. 
+%2 Будьте вежливы с другими игроками. 
+%2 По возможности воздерживайтесь от грубых выражений. 
+%2 Если возникли проблемы — напишите оператору канала. 
 
 :TRIGS: .time .bogustime
 
-%1 Current BogusTrivia Game/Server Time: %f%c%i. 
+%1 Текущее время игры/сервера BogusTrivia: %f%c%i. 
 
 } ;#  END user defined public trigger reply text ! (do not remove this line!) #
 

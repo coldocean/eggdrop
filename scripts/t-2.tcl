@@ -346,7 +346,7 @@
 
 
 
-putlog "Loading \00310BogusTrivia\003 v2.06.4.7 (14Aug14) by SpiKe^^..."
+putlog "Loading \00310BogusTrivia\003 v2.06.4.7 (14Aug14) от SpiKe^^..."
 
 set ttmp(pwdpath) [pwd]/  ;  set ttmp(scrpath) [file dirname [info script]]/
 set ttmp(sysdir) t2/  ;  set ttmp(qesdir) t2/ques/
@@ -757,23 +757,23 @@ set t2(G02) {
 ## greet 1 known player (publicly) ###
 set t2(G21) {
 %g
-%3 %n's Stats: %4 Points (answers) %d%w%mTotal Ever: %5 %e 
+%3 Статистика %n: %4 очков (ответов) %d%w%mВсего: %5 %e 
 }  ;## END - greet 1 known player (publicly) ###
 
 ## greet 1 known player (privatly) ###
 set t2(G31) {
 %g
-%3 Your Stats: %4 Points (answers) %d%w%mTotal Ever: %5 %e 
+%3 Твоя статистика: %4 очков (ответов) %d%w%mВсего: %5 %e 
 }  ;## END - greet 1 known player (privatly) ###
 
   set t2(G71) "" ; set t2(G72) "" ; set t2(G73) "" ; set t2(G74) ""
   set t2(G78) "" ; set t2(G79) "" ; set t2(G81) "" ; set t2(G82) ""
   set t2(G83) "" ; set t2(G84) "" ; set t2(G85) "" ; set t2(G86) ""
-  set t2(G91) "Today: %5 #%rd %pd (%qd) %4 "
+  set t2(G91) "Сегодня: %5 #%rd %pd (%qd) %4 "
   set t2(G92) ""
-  set t2(G93) "This Week: %5 #%rw %pw (%qw) %4 "
+  set t2(G93) "На неделе: %5 #%rw %pw (%qw) %4 "
   set t2(G94) ""
-  set t2(G95) "This Month: %5 #%rm %pm (%qm) %4 "
+  set t2(G95) "В этом месяце: %5 #%rm %pm (%qm) %4 "
   set t2(G96) ""
   set t2(G97) "#%re %pe (%qe)"
   set t2(G98) "none"
@@ -783,89 +783,89 @@ if {$t2(voice) ne "0" && $t2(v-how) ne "0"} {  ;##### ALL SAY PLAYER WAS VOICED 
 
 ## say voiced 1 player on-join (publicly) ###
 set t2(V01) {
-%4 ->%2 %n %1has been%2 Auto-Voiced %1 for being a%3 %z Top %y Player %1!!! %4<- 
+%4 ->%2 %n %1получил(а)%2 авто-voice %1 как%3 %z топ-игрок %y %1!!! %4<- 
 }  ;## END - say voiced 1 player on-join (publicly) ###
 
 ## say voiced 1 player on-join (privatly) ###
 set t2(V11) {
-%4 ->%2 You %1have been%2 Auto-Voiced %1 for being a%3 %z Top %y Player %1!!! %4<- 
+%4 ->%2 Ты %1получил(а)%2 авто-voice %1 как%3 %z топ-игрок %y %1!!! %4<- 
 }  ;## END - say voiced 1 player on-join (privatly) ###
 
 ## say voiced multiple players on-join (always public) ###
 set t2(V02) {
-%4 ->%2 [%n] %1have been%2 Auto-Voiced %1 for being%3 %z Top %y Players %1!!! %4<- 
+%4 ->%2 [%n] %1получили%2 авто-voice %1 как%3 %z топ-игроки %y %1!!! %4<- 
 }  ;## END - say voiced multiple players on-join (always public) ###
 
 ## say voiced 1 active player (publicly) ###
 set t2(V21) {
-%4 ->%2 %n %1has been%2 Auto-Voiced %1 for being a%3 %z Top %y Player %1!!! %4<- 
+%4 ->%2 %n %1получил(а)%2 авто-voice %1 как%3 %z топ-игрок %y %1!!! %4<- 
 }  ;## END - say voiced 1 active player (publicly) ###
 
 ## say voiced 1 active player (privatly) ###
 set t2(V31) {
-%4 ->%2 You %1have been%2 Auto-Voiced %1 for being a%3 %z Top %y Player %1!!! %4<- 
+%4 ->%2 Ты %1получил(а)%2 авто-voice %1 как%3 %z топ-игрок %y %1!!! %4<- 
 }  ;## END - say voiced 1 active player (privatly) ###
 
   set t2(V81) "" ;  set t2(V82) "" ;  set t2(V83) ""
   set t2(V84) "" ;  set t2(V85) "" ;  set t2(V86) ""
   set t2(V91) "/"
-  set t2(V92) "Weekly"
-  set t2(V93) "Monthly"
+  set t2(V92) "Недельный"
+  set t2(V93) "Месячный"
 }  ;###### END -  ALL SAY PLAYER WAS VOICED LANGUAGE TEXT ######
 
 if {$t2(autostart) ne "0"} {  ;###### ALL ON-JOIN AUTO START LANGUAGE TEXT ######
 
 ## Trivia starting in 'x' seconds, get ready!!! (public) ###
-set t2(A01) {%1 BogusTrivia starting in %x seconds, get ready!!! }
+set t2(A01) {%1 BogusTrivia начнётся через %x секунд, приготовьтесь!!! }
 
 }  ;###### END -  ALL ON-JOIN AUTO START LANGUAGE TEXT ######
 
 if {$t2(pubcmd)>"0"} {  ;###### ALL PUBLIC COMMANDS LANGUAGE TEXT ######
 
 ## Top 10 players taday ###
-set t2(P01) {%1 TODAYS Top 10 - %x}
+set t2(P01) {%1 Топ 10 за СЕГОДНЯ - %x}
 
 ## Top 11-20 players taday ###
-set t2(P02) {%1 TODAYS Top 11-20: - %x}
+set t2(P02) {%1 Топ 11-20 за СЕГОДНЯ: - %x}
 
 ## Top daily players above 20 ###
-set t2(P03) {%1 TODAYS Top %s-%e: - %x}
+set t2(P03) {%1 Топ %s-%e за СЕГОДНЯ: - %x}
 
 ## Top daily players - stats for each nick ###
 set t2(P04) {%2 #%r: %3 %n %p }
 
 ## Top 10 players this week ###
-set t2(P11) {%1 This WEEKS Top 10 - %x}
+set t2(P11) {%1 Топ 10 за НЕДЕЛЮ - %x}
 
 ## Top 11-20 players this week ###
-set t2(P12) {%1 This WEEKS Top 11-20: - %x}
+set t2(P12) {%1 Топ 11-20 за НЕДЕЛЮ: - %x}
 
 ## Top weekly players above 20 ###
-set t2(P13) {%1 This WEEKS Top %s-%e: - %x}
+set t2(P13) {%1 Топ %s-%e за НЕДЕЛЮ: - %x}
 
 ## Top weekly players - stats for each nick ###
 set t2(P14) {%2 #%r: %3 %n %p }
 
 ## Top 10 players this month ###
-set t2(P21) {%1 This MONTHS Top 10 - %x}
+set t2(P21) {%1 Топ 10 за МЕСЯЦ - %x}
 
 ## Top 11-20 players this month ###
-set t2(P22) {%1 This MONTHS Top 11-20: - %x}
+set t2(P22) {%1 Топ 11-20 за МЕСЯЦ: - %x}
 
 ## Top monthly players above 20 ###
-set t2(P23) {%1 This MONTHS Top %s-%e: - %x}
+set t2(P23) {%1 Топ %s-%e за МЕСЯЦ: - %x}
 
 ## Top monthly players - stats for each nick ###
 set t2(P24) {%2 #%r: %3 %n %p }
 
 ## Top 10 players ever ###
-set t2(P31) {%1 TOP 10 PLAYERS - %x}
+set t2(P31) {%1 ТОП 10 ИГРОКОВ - %x}
 
 ## Top 11-20 players ever ###
-set t2(P32) {%1 Top PLAYERS 11-20: - %x}
+set t2(P32) {%1 Топ ИГРОКОВ 11-20: - %x}
 
 ## Top players ever above 20 ###
-set t2(P33) {%1 Top PLAYERS %s-%e: - %x}
+set t2(P33) {%1 Топ ИГРОКОВ %s-%e: - %x}
 
 ## Top players ever - stats for each nick ###
 set t2(P34) {%2 #%r: %3 %n %p }
@@ -874,51 +874,51 @@ set t2(P34) {%2 #%r: %3 %n %p }
 set t2(P41) {%1 %s v%v by %a (%o) - www.mytclscripts.com }
 
 ## !webstats reply text ###
-set t2(P42) {%1 See BogusTrivia web statistics at: %w }
+set t2(P42) {%1 Веб-статистика BogusTrivia: %w }
 
 ## !info reply text ###
 set t2(P45) {
 %3 %s v%v by %a (%o) - www.mytclscripts.com 
-%1 The user file was created on %u (%t total players). 
-%1 %q Questions & %k Kaos in the Datebase (%z total). 
-%1 Current Game/Server Time: %f%c%i. 
+%1 Файл игроков создан %u (%t игроков всего). 
+%1 %q вопросов и %k каос в базе (%z всего). 
+%1 Текущее время игры/сервера: %f%c%i. 
 }
 set t2(P46) {}
 
 ## !mystats reply to known player ###
-set t2(P50) {%1 %n's Stats: %2 Points (answers) %d%w%mTotal Ever: %3 %e }
+set t2(P50) {%1 Статистика %n: %2 очков (ответов) %d%w%mВсего: %3 %e }
 
 ## !mystats reply to unknown player (set empty to not reply to unknown player) ###
 set t2(P51) {}
 
-  set t2(P52) "Today: %3 #%rd %pd (%qd) %2 "
+  set t2(P52) "Сегодня: %3 #%rd %pd (%qd) %2 "
   set t2(P53) ""
-  set t2(P54) "This Week: %3 #%rw %pw (%qw) %2 "
+  set t2(P54) "На неделе: %3 #%rw %pw (%qw) %2 "
   set t2(P55) ""
-  set t2(P56) "This Month: %3 #%rm %pm (%qm) %2 "
+  set t2(P56) "В этом месяце: %3 #%rm %pm (%qm) %2 "
   set t2(P57) ""
   set t2(P58) "#%re %pe (%qe)"
   set t2(P59) "none"
 
 ## !stats <nick> : reply for known player ###
-set t2(P60) {%1 %n's Stats: %2 Points (answers) %d%w%mTotal Ever: %3 %e }
+set t2(P60) {%1 Статистика %n: %2 очков (ответов) %d%w%mВсего: %3 %e }
 
 ## !stats <nick> : reply for unknown player (set empty to not reply for unknown player) ###
 set t2(P61) {}
 
-  set t2(P62) "Today: %3 #%rd %pd (%qd) %2 "
+  set t2(P62) "Сегодня: %3 #%rd %pd (%qd) %2 "
   set t2(P63) ""
-  set t2(P64) "This Week: %3 #%rw %pw (%qw) %2 "
+  set t2(P64) "На неделе: %3 #%rw %pw (%qw) %2 "
   set t2(P65) ""
-  set t2(P66) "This Month: %3 #%rm %pm (%qm) %2 "
+  set t2(P66) "В этом месяце: %3 #%rm %pm (%qm) %2 "
   set t2(P67) ""
   set t2(P68) "#%re %pe (%qe)"
   set t2(P69) "none"
 
 ## !stats nick : reply for no <nick> argument (set empty to not reply for no <nick> argument) ###
 set t2(P70) {
-%2 Incorrect Usage Of The %3%m%2 Command. You %3Must%2 Provide A Nick. 
-%2 The Correct Usage For This Command Is: %3 %m SomeonesNick  
+%2 Неверное использование команды %3%m%2. Нужно %3указать%2 ник. 
+%2 Правильно так: %3 %m ЧейтоНик  
 }
 
 }  ;###### END -  ALL PUBLIC COMMANDS LANGUAGE TEXT ######
@@ -1195,27 +1195,27 @@ proc TRandL {} {
 }
 proc TDoNum { {num Error} } {
  switch -exact -- $num {
-  0 {  return Zero  }
-  1 {  return One  }
-  2 {  return Two  }
-  3 {  return Three  }
-  4 {  return Four  }
-  5 {  return Five  }
-  6 {  return Six  }
-  7 {  return Seven  }
-  8 {  return Eight  }
-  9 {  return Nine  }
-  10 {  return Ten  }
-  11 {  return Eleven  }
-  12 {  return Twelve  }
-  13 {  return Thirteen  }
-  14 {  return Fourteen  }
-  15 {  return Fifteen  }
-  16 {  return Sixteen  }
-  17 {  return Seventeen  }
-  18 {  return Eighteen  }
-  19 {  return Nineteen  }
-  20 {  return Twenty  }
+  0 {  return Ноль  }
+  1 {  return Один  }
+  2 {  return Два  }
+  3 {  return Три  }
+  4 {  return Четыре  }
+  5 {  return Пять  }
+  6 {  return Шесть  }
+  7 {  return Семь  }
+  8 {  return Восемь  }
+  9 {  return Девять  }
+  10 {  return Десять  }
+  11 {  return Одиннадцать  }
+  12 {  return Двенадцать  }
+  13 {  return Тринадцать  }
+  14 {  return Четырнадцать  }
+  15 {  return Пятнадцать  }
+  16 {  return Шестнадцать  }
+  17 {  return Семнадцать  }
+  18 {  return Восемнадцать  }
+  19 {  return Девятнадцать  }
+  20 {  return Двадцать  }
   default {  return $num  }
  }
 }
@@ -1748,11 +1748,11 @@ proc TSavHist { {wat 0} } {  global t2 tclr botnick nick  ;  set isnew 0  ;  set
    } elseif {$wat=="2"} {  set toplin ""  ;  set topln2 ""  ;  set topln3 ""
      if {$doda=="1" && $dals!=""} {  set count 0
       set topls [lsort -index 0 -integer -decreasing $dals]
-      set toplin "$tclr(-d10) TODAYS Top 10 - "
+      set toplin "$tclr(-d10) Топ 10 за СЕГОДНЯ - "
       if {$t2(today)>"1" && [llength $topls]>"11"} {
-        set topln2 "$tclr(-d10) TODAYS Top 11-20: - "  }
+        set topln2 "$tclr(-d10) Топ 11-20 за СЕГОДНЯ: - "  }
       if {$t2(today)>"2" && [llength $topls]>"21"} {
-        set topln3 "$tclr(-d10) TODAYS Top 21-30: - "  }
+        set topln3 "$tclr(-d10) Топ 21-30 за СЕГОДНЯ: - "  }
       foreach topusr $topls {  incr count
        foreach {tp tc nk hn uh} $topusr { break }
        set tnick [string range $nk 3 end]
@@ -1770,11 +1770,11 @@ proc TSavHist { {wat 0} } {  global t2 tclr botnick nick  ;  set isnew 0  ;  set
       if {$count<"30" && $d10>"0"} {  set d10 [expr {round("$d10.0"-($d10/6))}]  }
      } elseif {$dowe=="1" && $wels!=""} {  set count 0
       set topls [lsort -index 0 -integer -decreasing $wels]
-      set toplin "$tclr(-w10) This WEEKS Top 10 - "
+      set toplin "$tclr(-w10) Топ 10 за НЕДЕЛЮ - "
       if {$t2(today)>"1" && [llength $topls]>"11"} {
-        set topln2 "$tclr(-w10) This WEEKS Top 11-20: - "  }
+        set topln2 "$tclr(-w10) Топ 11-20 за НЕДЕЛЮ: - "  }
       if {$t2(today)>"2" && [llength $topls]>"21"} {
-        set topln3 "$tclr(-w10) This WEEKS Top 21-30: - "  }
+        set topln3 "$tclr(-w10) Топ 21-30 за НЕДЕЛЮ: - "  }
       foreach topusr $topls {  incr count
        foreach {tp tc nk hn uh} $topusr { break }
        set tnick [string range $nk 3 end]
@@ -1792,11 +1792,11 @@ proc TSavHist { {wat 0} } {  global t2 tclr botnick nick  ;  set isnew 0  ;  set
       if {$count<"30" && $w10>"0"} {  set w10 [expr {round("$w10.0"-($w10/6))}]  }
      } elseif {$domo=="1" && $mols!=""} {  set count 0
       set topls [lsort -index 0 -integer -decreasing $mols]
-      set toplin "$tclr(-m10) This MONTHS Top 10 - "
+      set toplin "$tclr(-m10) Топ 10 за МЕСЯЦ - "
       if {$t2(today)>"1" && [llength $topls]>"11"} {
-        set topln2 "$tclr(-m10) This MONTHS Top 11-20: - "  }
+        set topln2 "$tclr(-m10) Топ 11-20 за МЕСЯЦ: - "  }
       if {$t2(today)>"2" && [llength $topls]>"21"} {
-        set topln3 "$tclr(-m10) This MONTHS Top 21-30: - "  }
+        set topln3 "$tclr(-m10) Топ 21-30 за МЕСЯЦ: - "  }
       foreach topusr $topls {  incr count
        foreach {tp tc nk hn uh} $topusr { break }
        set tnick [string range $nk 3 end]
@@ -1814,11 +1814,11 @@ proc TSavHist { {wat 0} } {  global t2 tclr botnick nick  ;  set isnew 0  ;  set
       if {$count<"30" && $m10>"0"} {  set m10 [expr {round("$m10.0"-($m10/6))}]  }
      } elseif {$doev=="1" && $evls!=""} {  set count "0"
       set topls [lsort -index 0 -integer -decreasing $evls]
-      set toplin "$tclr(-e10) TOP 10 PLAYERS - "
+      set toplin "$tclr(-e10) ТОП 10 ИГРОКОВ - "
       if {$t2(today)>"1" && [llength $topls]>"11"} {
-          set topln2 "$tclr(-e10) Top PLAYERS 11-20: - "  }
+          set topln2 "$tclr(-e10) Топ ИГРОКОВ 11-20: - "  }
       if {$t2(today)>"2" && [llength $topls]>"21"} {
-          set topln3 "$tclr(-e10) Top PLAYERS 21-30: - "  }
+          set topln3 "$tclr(-e10) Топ ИГРОКОВ 21-30: - "  }
       foreach topusr $topls {  incr count
        foreach {tp tc nk hn uh} $topusr { break }
        set tnick [string range $nk 3 end]
@@ -1861,7 +1861,7 @@ proc TOnOff {nk uh hn ch tx {from 0} } {  global t2 tclr botnick nick
    if {$t2(-hbound)=="1"} { TBind h u } ; if {$t2(-qbound)=="1"} { TBind q u }
    if {$t2(-abound)=="1"} { TBind a u } ; TCntQes
    if {$t2(-qfcnt)=="0"} {
-    putserv "PRIVMSG $ch :$t2(script): No questions loaded."  ;  return 0
+    putserv "PRIVMSG $ch :$t2(script): Вопросы не загружены."  ;  return 0
    }
    if {$t2(limit)>"0"} {  set t2(-lchek) 1  }
    set t2(-ison) 1  ;  set updat 0 ; TDoHInfo
@@ -1871,7 +1871,7 @@ proc TOnOff {nk uh hn ch tx {from 0} } {  global t2 tclr botnick nick
    } else {  TSavUsers  ;  set isnewus 1  }
    set wasbad [TSavActiv 0 $updat]
    if {$from=="5"} {  set t2(-aon) $hn
-   } else {  putquick "PRIVMSG $ch :$t2(script) by $t2(auth) Loading..."  }
+   } else {  putquick "PRIVMSG $ch :$t2(script) от $t2(auth) Загрузка..."  }
    set t2(-htime) $t2(qtime)  ;  set t2(-ptime) $t2(ptime)  ;  set t2(-stime) $t2(stime)
    array set t2 {-shorand 0 -randcnt 0 -shoda10 0 -showe10 0 -shomo10 0 -shoev10 0}
    array set t2 {-shohist 0 -qansrd 0 -qmissd 0 -utrigd 1 -udead 0 -shoad 0}
@@ -1954,7 +1954,7 @@ proc TOnOff {nk uh hn ch tx {from 0} } {  global t2 tclr botnick nick
      } else {  TBakUp u 0  }
      unset t2(-dobakup)
    }
-   putquick "PRIVMSG $ch :$t2(script) by $t2(auth) Stopped."
+   putquick "PRIVMSG $ch :$t2(script) от $t2(auth) Остановлена."
  }
 }
 proc TRanking {pls len {how 1} {ho2 1} } {  global t2  ;  set new ""  ;  set tls ""  ;  set tnum 0
@@ -2043,7 +2043,7 @@ proc TGotIt {nk uh hn ch tx} {  global t2 tclr botnick  ;  set iskaos 0
    }
    set t2(-kansls) [lreplace $t2(-kansls) $temp [expr {$temp+3}]]
    if {$t2(-points)=="1"} {  set point point  } else {  set point points  }
-   putquick "PRIVMSG $ch :$tclr(-ktu) $nk gets $t2(-points) $point for: $tclr(-ktu2) $tx "
+   putquick "PRIVMSG $ch :$tclr(-ktu) $nk получает $t2(-points) $point за: $tclr(-ktu2) $tx "
    incr t2(-kgotpnts) $t2(-points)
    if {$t2(-kusrls) eq ""} {  set t2(-kusrls) [list $nk $hn $uh $t2(-points) 1]
    } else {  set kfnd 0  ;  set nidx 0
@@ -2066,20 +2066,20 @@ proc TGotIt {nk uh hn ch tx} {  global t2 tclr botnick  ;  set iskaos 0
    } elseif {$t2(-hntnum)=="1"} {  set points $t2(-points)
    } elseif {$t2(-hntnum)=="2"} {  set points [expr {round($t2(-points)/2.0)}]
    } else {  set points [expr {round([expr {round($t2(-points)/2.0)}]/2.0)}]  }
-   set say "$tclr(-tu2) YES,$tclr(-tu1) $nk $tclr(-tu2)got the answer ->$tclr(-tu1) $tx $tclr(-tu2)<- in$tclr(-tu1)"
+   set say "$tclr(-tu2) ДА,$tclr(-tu1) $nk $tclr(-tu2)угадал ответ ->$tclr(-tu1) $tx $tclr(-tu2)<- за$tclr(-tu1)"
    if {$points=="1"} {  set p point  } else {  set p points  }
-   putquick "PRIVMSG $ch :$say $qestime $tclr(-tu2)seconds, and gets$tclr(-tu1) $points $tclr(-tu2)$p "
+   putquick "PRIVMSG $ch :$say $qestime $tclr(-tu2)секунд, получает$tclr(-tu1) $points $tclr(-tu2)$p "
    set newaddls [list $nk $hn $uh $points 1]
    if {[string match -nocase "$nk *" $t2(-qansrd)]=="1"} {
      set anscnt [expr { [lindex [split $t2(-qansrd)] 1]+1 }] ; set t2(-qansrd) "$nk $anscnt"
    } else {  set anscnt 1  ;  set t2(-qansrd) "$nk 1"  }
-   set pstr "$tclr(-tu1) $nk $tclr(-tu2)has won$tclr(-tu1) $anscnt $tclr(-tu2)in a row!"
+   set pstr "$tclr(-tu1) $nk $tclr(-tu2)выиграл$tclr(-tu1) $anscnt $tclr(-tu2)подряд!"
  }
  if {$endnow=="1"} {
    if {$iskaos=="1"} {  set opt 1
-     set kalltx "$tclr(-ktu) Congratulations, $tclr(-ktu2)You've Guessed Them All !!"
+     set kalltx "$tclr(-ktu) Поздравляем, $tclr(-ktu2)Вы угадали всё !!"
      if {[llength $newaddls]>"5" && $t2(-kbon)>"0"} {
-       append kalltx " $tclr(-kbon) Everyone gets a$tclr(-kbon2) $t2(-kbon) Point $tclr(-kbon)Bonus !! "
+       append kalltx " $tclr(-kbon) Каждый получает$tclr(-kbon2) $t2(-kbon) очков $tclr(-kbon)бонус !! "
        set newaddl2 ""
      } else {  append kalltx "! "  ;  set t2(-kbon) 0  }
    }
@@ -2107,16 +2107,16 @@ proc TGotIt {nk uh hn ch tx} {  global t2 tclr botnick  ;  set iskaos 0
         } else {   set t2(-active) [lreplace $t2(-active) $nidx $end]
           set t2(-active) [linsert $t2(-active) 0 $fnk $fn2 $fhn $fuh $fu2 $da $we $mo]
         }
-        putquick "PRIVMSG $ch :$pstr Total Points TODAY:$tclr(-tu1) $da $tclr(-tu2) this WEEK:$tclr(-tu1) $we $tclr(-tu2) & this MONTH:$tclr(-tu1) $mo "
+        putquick "PRIVMSG $ch :$pstr Всего очков СЕГОДНЯ:$tclr(-tu1) $da $tclr(-tu2) на НЕДЕЛЕ:$tclr(-tu1) $we $tclr(-tu2) & за МЕСЯЦ:$tclr(-tu1) $mo "
       } else {  putquick "PRIVMSG $ch :$pstr"  ;  set opt 1  }
     }
    }
    if {$iskaos=="1"} {
      if {$t2(-kbon)>"0"} {  set t2(-kusrls) $newaddl2  }
-     if {$t2(-kgotpnts)=="1"} {  set point Point  } else {  set point Points  }
-     set kstats "$tclr(-kstat) Total Awarded:$tclr(-ksta2) $t2(-kgotpnts) $point "
+     if {$t2(-kgotpnts)=="1"} {  set point очко  } else {  set point очков  }
+     set kstats "$tclr(-kstat) Всего начислено:$tclr(-ksta2) $t2(-kgotpnts) $point "
      if {[llength $t2(-kusrls)]>"5"} {
-       append kstats "$tclr(-kstat)to [expr {[llength $t2(-kusrls)]/5}] Players "
+       append kstats "$tclr(-kstat)игрокам [expr {[llength $t2(-kusrls)]/5}] "
      }
      putquick "PRIVMSG $t2(chan) :$kalltx" ; putquick "PRIVMSG $t2(chan) :$kstats"
    }
@@ -2147,11 +2147,11 @@ proc TPQues {nk uh hn ch tx} {  global t2 tclr
 }
 proc TDoHint {nk uh hn ch tx} {  global t2 tclr botnick  ;  TBind h u
  if {$t2(-hntnum)=="1"} {
-   putserv "PRIVMSG $ch :$tclr(-hnt1) Hint:$tclr(-hnt2) $t2(-uhint) " ; set t2(-uhint) ""
+   putserv "PRIVMSG $ch :$tclr(-hnt1) Подсказка:$tclr(-hnt2) $t2(-uhint) " ; set t2(-uhint) ""
  } elseif {$t2(-hntnum)=="2"} {
-   putserv "PRIVMSG $ch :$tclr(-hnt1) Hint:$tclr(-hnt2) $t2(-uhnt2) " ; set t2(-uhnt2) ""
+   putserv "PRIVMSG $ch :$tclr(-hnt1) Подсказка:$tclr(-hnt2) $t2(-uhnt2) " ; set t2(-uhnt2) ""
  } else {
-   putserv "PRIVMSG $ch :$tclr(-hnt1) Hint:$tclr(-hnt2) $t2(-uhnt3) " ; set t2(-uhnt3) "" }
+   putserv "PRIVMSG $ch :$tclr(-hnt1) Подсказка:$tclr(-hnt2) $t2(-uhnt3) " ; set t2(-uhnt3) "" }
  array set t2 {-utrigd 1 -udead 0}
  set t2(-htime) $t2(qtime)  ;  set t2(-ptime) $t2(ptime)  ;  set t2(-stime) $t2(stime)
 }
@@ -2202,20 +2202,20 @@ proc TShoTriv { {expect unk} } {  global t2 tclr botnick
      if {$istop=="0"} {  set t2(-qtimer) [utimer $t2(-ptime) [list TShoTriv 0]]  }
      if {$iskaos=="1"} {  set kleft [expr {[llength $t2(-kansls)]/4}]
        set kgot [expr {$t2(-kanstot)-$kleft}]  ;  set kusrs [expr {[llength $t2(-kusrls)]/5}]
-       if {$t2(givkaos)!="0"} {  set ktutmp "$tclr(-ktu) Times up! $tclr(-ktu2) No one got $tclr(-kng) "
+       if {$t2(givkaos)!="0"} {  set ktutmp "$tclr(-ktu) Время вышло! $tclr(-ktu2) Никто не угадал $tclr(-kng) "
          foreach {kans hn2 hn3 kvar} $t2(-kansls) {  append ktutmp "\[$kans\] "  }
-       } else {  set ktutmp "$tclr(-ktu2) Times up! "  }
+       } else {  set ktutmp "$tclr(-ktu2) Время вышло! "  }
        putquick "PRIVMSG $t2(chan) :$ktutmp"
        if {$kgot>"0"} {
-         set ktutm2 "$tclr(-kstat) Correctly Answered:$tclr(-ksta2) $kgot of $t2(-kanstot) "
-         if {$t2(-kgotpnts)=="1"} {  set point Point  } else {  set point Points  }
-         append ktutm2 "$tclr(-kstat) Total Awarded:$tclr(-ksta2) $t2(-kgotpnts) $point "
-         if {$kusrs>"1"} {  append ktutm2 "$tclr(-kstat)to $kusrs Players "  }
+         set ktutm2 "$tclr(-kstat) Правильно отвечено:$tclr(-ksta2) $kgot из $t2(-kanstot) "
+         if {$t2(-kgotpnts)=="1"} {  set point очко  } else {  set point очков  }
+         append ktutm2 "$tclr(-kstat) Всего начислено:$tclr(-ksta2) $t2(-kgotpnts) $point "
+         if {$kusrs>"1"} {  append ktutm2 "$tclr(-kstat)игрокам $kusrs "  }
          putquick "PRIVMSG $t2(chan) :$ktutm2"
        }
      } else {  set ansr ""
-       if {$t2(givansr)!="0"} { set ansr "$tclr(-tu2) The answer was -> $tclr(-tu1) $t2(-answer) $tclr(-tu2) <- " }
-       putquick "PRIVMSG $t2(chan) :$tclr(-tu1) Times up! $ansr"
+       if {$t2(givansr)!="0"} { set ansr "$tclr(-tu2) Ответ был -> $tclr(-tu1) $t2(-answer) $tclr(-tu2) <- " }
+       putquick "PRIVMSG $t2(chan) :$tclr(-tu1) Время вышло! $ansr"
      }
    }
    if {$t2(-hntnum)>"-1" && $iskaos=="1" && $kgot>"0"} {
@@ -2275,29 +2275,29 @@ proc TShoTriv { {expect unk} } {  global t2 tclr botnick
     set t2(-qtimer) [utimer $sec [list TShoTriv 2]]
     if {$t2(krest)=="1" && $t2(-udead)>=$t2(rqcnt)} {  set doshort 1
     } elseif {$t2(krest)>"1" && $t2(-udead)>=$t2(sqcnt)} {  set doshort 1  }
-    set t2(-hnt2) "$tclr(-khnt) 2nd Hint:$tclr(-khnt2)"
+    set t2(-hnt2) "$tclr(-khnt) 2-я Подсказка:$tclr(-khnt2)"
     if {$t2(kstyle)>"1" || $doshort=="1"} {  set kleft [expr {[llength $t2(-kansls)]/4}]
       if {$kleft==$t2(-kanstot)} {  append t2(-hnt2) " All Answers Remaining at "
       } elseif {$kleft=="1"} {  append t2(-hnt2) " One Answer Remaining at "
       } else { append t2(-hnt2) " $kleft of $t2(-kanstot) Answers Remaining at "  }
-      if {$t2(-points)=="1"} {  set point Point  } else {  set point Points  }
+      if {$t2(-points)=="1"} {  set point очко  } else {  set point очков  }
       if {$kleft=="1"} {  append t2(-hnt2) "$t2(-points) $point $t2(-endclr) $tclr(-kpnt1) "
-      } else {  append t2(-hnt2) "$t2(-points) $point Each $t2(-endclr) $tclr(-kpnt1) "  }
-      putquick "PRIVMSG $t2(chan) :$t2(-hnt2)[expr {$sec*2}] seconds "
+      } else {  append t2(-hnt2) "$t2(-points) $point каждый $t2(-endclr) $tclr(-kpnt1) "  }
+      putquick "PRIVMSG $t2(chan) :$t2(-hnt2)[expr {$sec*2}] секунд "
     } else {
       if {$t2(descend)=="1"} {  set t2(-points) [expr {round($t2(-points)/2.0)}]  }
       foreach {kans hn2 hn3 kvar} $t2(-kansls) {  append t2(-hnt2) " $hn2"  }
-      append t2(-hnt2) " $t2(-endclr) $tclr(-kpnt1) [expr {$sec*2}] seconds "
+      append t2(-hnt2) " $t2(-endclr) $tclr(-kpnt1) [expr {$sec*2}] секунд "
       putquick "PRIVMSG $t2(chan) :$t2(-hnt2)"
     }
   } else {  set t2(-qtimer) [utimer $t2(-htime) [list TShoTriv 2]]
-    set t2(-hnt2) "$tclr(-hint) 2nd Hint:$tclr(-hint2) $t2(-hnt2) $t2(-endclr) "
+    set t2(-hnt2) "$tclr(-hint) 2-я Подсказка:$tclr(-hint2) $t2(-hnt2) $t2(-endclr) "
     if {$t2(descend)=="1"} {  set givpnt [expr {round($t2(-points)/2.0)}]
-      if {$givpnt=="1"} {  set point Point  } else {  set point Points  }
-      append t2(-hnt2) "$tclr(-pnt1) [expr {$t2(-htime)*2}] secs &$tclr(-pnt2) $givpnt"
-      putquick "PRIVMSG $t2(chan) :$t2(-hnt2) $point $tclr(-pnt1)Remaining "
-    } else {  append t2(-hnt2) "$tclr(-pnt1) [expr {$t2(-htime)*2}] secs remaining.  Value:"
-      if {$t2(-points)=="1"} {  set point Point  } else {  set point Points  }
+      if {$givpnt=="1"} {  set point очко  } else {  set point очков  }
+      append t2(-hnt2) "$tclr(-pnt1) [expr {$t2(-htime)*2}] сек &$tclr(-pnt2) $givpnt"
+      putquick "PRIVMSG $t2(chan) :$t2(-hnt2) $point $tclr(-pnt1)осталось "
+    } else {  append t2(-hnt2) "$tclr(-pnt1) [expr {$t2(-htime)*2}] сек осталось.  Значение:"
+      if {$t2(-points)=="1"} {  set point очко  } else {  set point очков  }
       putquick "PRIVMSG $t2(chan) :$t2(-hnt2)$tclr(-pnt2) $t2(-points) $point "
     }
   }
@@ -2313,30 +2313,30 @@ proc TShoTriv { {expect unk} } {  global t2 tclr botnick
     set t2(-qtimer) [utimer $sec [list TShoTriv 3]]
     if {$t2(krest)=="1" && $t2(-udead)>=$t2(rqcnt)} {  set doshort 1
     } elseif {$t2(krest)>"1" && $t2(-udead)>=$t2(sqcnt)} {  set doshort 1  }
-    set t2(-hnt3) "$tclr(-khnt) 3rd Hint:$tclr(-khnt2)"
+    set t2(-hnt3) "$tclr(-khnt) 3-я Подсказка:$tclr(-khnt2)"
     if {$t2(kstyle)>"2" || $doshort=="1"} {  set kleft [expr {[llength $t2(-kansls)]/4}]
       if {$kleft==$t2(-kanstot)} {  append t2(-hnt3) " All Answers Remaining at "
       } elseif {$kleft=="1"} {  append t2(-hnt3) " One Answer Remaining at "
       } else { append t2(-hnt3) " $kleft of $t2(-kanstot) Answers Remaining at "  }
-      if {$t2(-points)=="1"} {  set point Point  } else {  set point Points  }
+      if {$t2(-points)=="1"} {  set point очко  } else {  set point очков  }
       if {$kleft=="1"} {  append t2(-hnt3) "$t2(-points) $point $t2(-endclr) $tclr(-kpnt1) "
-      } else {  append t2(-hnt3) "$t2(-points) $point Each $t2(-endclr) $tclr(-kpnt1) "  }
-      putquick "PRIVMSG $t2(chan) :$t2(-hnt3)$sec seconds "
+      } else {  append t2(-hnt3) "$t2(-points) $point каждый $t2(-endclr) $tclr(-kpnt1) "  }
+      putquick "PRIVMSG $t2(chan) :$t2(-hnt3)$sec секунд "
     } else {
       if {$t2(descend)=="1"} {  set t2(-points) [expr {round($t2(-points)/2.0)}]  }
       foreach {kans hn2 hn3 kvar} $t2(-kansls) {  append t2(-hnt3) " $hn3"  }
-      append t2(-hnt3) " $t2(-endclr) $tclr(-kpnt1) $sec seconds "
+      append t2(-hnt3) " $t2(-endclr) $tclr(-kpnt1) $sec секунд "
       putquick "PRIVMSG $t2(chan) :$t2(-hnt3)"
     }
   } else {  set t2(-qtimer) [utimer $t2(-htime) [list TShoTriv 3]]
-    set t2(-hnt3) "$tclr(-hint) 3rd Hint:$tclr(-hint2) $t2(-hnt3) $t2(-endclr) "
+    set t2(-hnt3) "$tclr(-hint) 3-я Подсказка:$tclr(-hint2) $t2(-hnt3) $t2(-endclr) "
     if {$t2(descend)=="1"} {
       set givpnt [expr {round([expr {round($t2(-points)/2.0)}]/2.0)}]
-      if {$givpnt=="1"} {  set point Point  } else {  set point Points  }
-      append t2(-hnt3) "$tclr(-pnt1) $t2(-htime) secs &$tclr(-pnt2) $givpnt"
-      putquick "PRIVMSG $t2(chan) :$t2(-hnt3) $point $tclr(-pnt1)Remaining "
-    } else {  append t2(-hnt3) "$tclr(-pnt1) $t2(-htime) secs remaining.  Value:"
-      if {$t2(-points)=="1"} {  set point Point  } else {  set point Points  }
+      if {$givpnt=="1"} {  set point очко  } else {  set point очков  }
+      append t2(-hnt3) "$tclr(-pnt1) $t2(-htime) сек &$tclr(-pnt2) $givpnt"
+      putquick "PRIVMSG $t2(chan) :$t2(-hnt3) $point $tclr(-pnt1)осталось "
+    } else {  append t2(-hnt3) "$tclr(-pnt1) $t2(-htime) сек осталось.  Значение:"
+      if {$t2(-points)=="1"} {  set point очко  } else {  set point очков  }
       putquick "PRIVMSG $t2(chan) :$t2(-hnt3)$tclr(-pnt2) $t2(-points) $point "
     }
   }
@@ -2431,22 +2431,22 @@ proc TReadHist {num {opt -1} } {  global t2 tclr botnick
  if {$find ne "1+"} {  set lut [lindex $utls 0]  ;  set plls [lindex $plls 0]
    if {[llength $plls]=="22"} {  set plls [lrange $plls 0 19]
    } elseif {[llength $plls]=="42"} {  set plls [lrange $plls 0 39]  }
-   if {$num=="1"} {  set sholine "$tclr(-d10) YESTERDAYS Top 10 - "
-     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-d10) YESTERDAYS Top 11-20: - "  }
-     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-d10) YESTERDAYS Top 21-30: - "  }
-   } elseif {$num=="2"} {  set sholine "$tclr(-w10) Last WEEKS Top 10 - "
-     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-w10) Last WEEKS Top 11-20: - "  }
-     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-w10) Last WEEKS Top 21-30: - "  }
-   } elseif {$num=="3"} {  set sholine "$tclr(-m10) Last MONTHS Top 10 - "
-     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-m10) Last MONTHS Top 11-20: - "  }
-     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-m10) Last MONTHS Top 21-30: - "  }
+   if {$num=="1"} {  set sholine "$tclr(-d10) Топ 10 за ВЧЕРА - "
+     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-d10) Топ 11-20 за ВЧЕРА: - "  }
+     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-d10) Топ 21-30 за ВЧЕРА: - "  }
+   } elseif {$num=="2"} {  set sholine "$tclr(-w10) Топ 10 за ПРОШЛУЮ НЕДЕЛЮ - "
+     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-w10) Топ 11-20 за ПРОШЛУЮ НЕДЕЛЮ: - "  }
+     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-w10) Топ 21-30 за ПРОШЛУЮ НЕДЕЛЮ: - "  }
+   } elseif {$num=="3"} {  set sholine "$tclr(-m10) Топ 10 за ПРОШЛЫЙ МЕСЯЦ - "
+     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-m10) Топ 11-20 за ПРОШЛЫЙ МЕСЯЦ: - "  }
+     if {[llength $plls]>"40"} {  set sholin3 "$tclr(-m10) Топ 21-30 за ПРОШЛЫЙ МЕСЯЦ: - "  }
    } elseif {$dwm=="D"} {
      if {$t2(days1) eq ""} {  set day [string toupper [strftime %A $lut]]
      } else {  set day [lindex $t2(days1) [strftime %u $lut]]  }
-     set sholine "$tclr(-d10) ${day}S Top 10 - "
-     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-d10) ${day}S Top 11-20: - "  }
-   } elseif {$dwm=="W"} {  set sholine "$tclr(-w10) $find WEEKS Ago: Top 10 - "
-     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-w10) $find WEEKS Ago: Top 11-20: - "  }
+     set sholine "$tclr(-d10) ${day} Топ 10 - "
+     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-d10) ${day} Топ 11-20: - "  }
+   } elseif {$dwm=="W"} {  set sholine "$tclr(-w10) $find недель назад: Топ 10 - "
+     if {[llength $plls]>"20"} {  set sholin2 "$tclr(-w10) $find недель назад: Топ 11-20: - "  }
    } elseif {$dwm=="M"} {
      if {$t2(mons1) eq ""} {  set month [string toupper [strftime %B $lut]]
      } else {  set month [lindex $t2(mons1) [string trimleft [strftime %m $lut] 0]]  }
@@ -2500,7 +2500,7 @@ proc TChkDed {todo done} {  global t2 botnick
  }
  if {$cnt=="0"} {  incr todo -1  ;  incr done
    if {$todo=="0"} {
-     putquick "PRIVMSG $t2(chan) :$t2(script) utimer Error! Shutting down..."
+     putquick "PRIVMSG $t2(chan) :$t2(script) ошибка таймера! Выключение..."
      TOnOff $botnick error stop $t2(chan) 0 6
      return 0
    }
@@ -2973,14 +2973,14 @@ proc TMkLines {} {  global t2 tclr botnick nick ;  set t2(-otimer) "" ;  set doq
     if {$isbon=="1"} {
       set pnttmp [TMkPoint $pbase $aprang $t2(-roundb) $t2(minbonus) $t2(maxbonus) b]
     } else {  set pnttmp [TMkPoint $pbase $aprang $t2(-roundq) $t2(lpoint) $t2(hpoint) q]  }
-    set t2(-hint) "$tclr(-hint) 1st Hint:$tclr(-hint2) $t2(-hint) $t2(-endclr) "
-    if {$pnttmp=="1"} {  set point Point  } else {  set point Points  }
+    set t2(-hint) "$tclr(-hint) 1-я Подсказка:$tclr(-hint2) $t2(-hint) $t2(-endclr) "
+    if {$pnttmp=="1"} {  set point очко  } else {  set point очков  }
     if {$isbon=="1"} {
-      append t2(-hint) "$tclr(-bonus) BONUS Question Value :$tclr(-bon2) $pnttmp $point "
-    } else {  append t2(-hint) "$tclr(-pnt1) Question Value :$tclr(-pnt2) $pnttmp $point "  }
+      append t2(-hint) "$tclr(-bonus) БОНУС Вопрос на :$tclr(-bon2) $pnttmp $point "
+    } else {  append t2(-hint) "$tclr(-pnt1) Вопрос на :$tclr(-pnt2) $pnttmp $point "  }
     set t2(-points) $pnttmp
   } else {
-    set t2(-hint) "$tclr(-khnt) 1st Hint:$tclr(-khnt2) [string trim $t2(-hint)] $t2(-endclr) "
+    set t2(-hint) "$tclr(-khnt) 1-я Подсказка:$tclr(-khnt2) [string trim $t2(-hint)] $t2(-endclr) "
     set digav [expr {$kdigcnt/$kanscnt}]
     set pbase $t2(klpoint)  ;  set phigh $t2(khpoint)  ;  set prang [expr {$phigh-$pbase}]
     if {$prang>"0"} {  set fifth [expr {$prang/5.0}]
@@ -3023,24 +3023,24 @@ proc TMkLines {} {  global t2 tclr botnick nick ;  set t2(-otimer) "" ;  set doq
     set t2(-kgotpnts) 0  ;  set t2(-kusrls) ""  ;  set doshort 0
     if {$t2(krest)=="1" && $t2(-udead)>=$t2(rqcnt)} {  set doshort 1
     } elseif {$t2(krest)>"1" && $t2(-udead)>=$t2(sqcnt)} {  set doshort 1  }
-    if {$t2(-points)=="1"} {  set point Point  } else {  set point Points  }
+    if {$t2(-points)=="1"} {  set point очко  } else {  set point очков  }
     if {$t2(kstyle)=="0" && $doshort=="0"} {
-      set qlbeg " $kanscnt Answers at $t2(-points) $point Each"
-      set qlend " Total: $pnttmp Points "
+      set qlbeg " $kanscnt ответов по $t2(-points) $point каждый"
+      set qlend " Всего: $pnttmp очков "
       set qstrlen [expr {$ln1cnt+[string length $qlbeg]+[string length $qlend]}]
       if {$tclr(-kpnt1) ne ""} {  incr qstrlen [string length $tclr(-kpnt1)]  }
       if {$tclr(-kpnt2) ne ""} {  incr qstrlen [string length $tclr(-kpnt2)]  }
       if {$qstrlen<=$t2(maxchar)} {  append t2(-questn) $tclr(-kpnt1)$qlbeg$tclr(-kpnt2)$qlend
       } else {  append t2(-quesn2) $tclr(-kpnt1)$qlbeg$tclr(-kpnt2)$qlend  }
     } else {
-      set qlbeg " Question Value :"  ;  set qlend " $pnttmp Points "
+      set qlbeg " Вопрос на :"  ;  set qlend " $pnttmp Points "
       set qstrlen [expr {$ln1cnt+[string length $qlbeg]+[string length $qlend]}]
       if {$tclr(-kpnt1) ne ""} {  incr qstrlen [string length $tclr(-kpnt1)]  }
       if {$tclr(-kpnt2) ne ""} {  incr qstrlen [string length $tclr(-kpnt2)]  }
       if {$qstrlen<=$t2(maxchar)} {  append t2(-questn) $tclr(-kpnt1)$qlbeg$tclr(-kpnt2)$qlend
       } else {  append t2(-quesn2) $tclr(-kpnt1)$qlbeg$tclr(-kpnt2)$qlend  }
-      set t2(-hint) "$tclr(-khnt) 1st Hint:$tclr(-khnt2) [TDoNum $kanscnt] Possible Answers $t2(-endclr) "
-      append t2(-hint) "$tclr(-kpnt1) Each Answer :$tclr(-kpnt2) $t2(-points) $point "
+      set t2(-hint) "$tclr(-khnt) 1-я Подсказка:$tclr(-khnt2) [TDoNum $kanscnt] возможных ответов $t2(-endclr) "
+      append t2(-hint) "$tclr(-kpnt1) Каждый ответ :$tclr(-kpnt2) $t2(-points) $point "
     }
   }
  }
@@ -3230,10 +3230,10 @@ proc TSetup { {nk 0} {uh 0} {hn 0} {tx 0} {opt 0} } {
  if {$opt=="1"} {
    if {$t2(-qfcnt)>"0"} {  return 1
    } else {
-     if {$havnew==""} {  putserv "PRIVMSG $t2(chan) :$t2(script): No New Question Files Found."
+     if {$havnew==""} {  putserv "PRIVMSG $t2(chan) :$t2(script): Новых файлов вопросов не найдено."
      } else {
-       putserv "PRIVMSG $t2(chan) :$t2(script): New Questions Found: [join $havnew]"
-       putserv "PRIVMSG $t2(chan) :Type $tclr(-msg) /msg $botnick .add $tclr(-emsg) now to load these questions."
+       putserv "PRIVMSG $t2(chan) :$t2(script): Найдены новые вопросы: [join $havnew]"
+       putserv "PRIVMSG $t2(chan) :Напиши $tclr(-msg) /msg $botnick .add $tclr(-emsg) чтобы загрузить эти вопросы."
      }
      return 0
    }
@@ -3258,19 +3258,19 @@ proc TAdd {nk uh hn tx {opt 0} } {  global t2 tclr botnick
      }
      set t2(-kopen) ""
      if {[string match $t2(myfils) [lindex $jusfls 0]]} {  set frmt $t2(myfmt)
-       if {$havtot=="1"} {  putserv "PRIVMSG $nk :\00310Found one BogusQuestion file: [join $jusfls]"
-       } elseif {$havtot>"4"} {  putserv "PRIVMSG $nk :\00310Found $havtot BogusQuestion files."
-       } else {  putserv "PRIVMSG $nk :\00310Found $havtot BogusQuestion files: [join $jusfls]"  }
+       if {$havtot=="1"} {  putserv "PRIVMSG $nk :\00310Найден один файл BogusQuestion: [join $jusfls]"
+       } elseif {$havtot>"4"} {  putserv "PRIVMSG $nk :\00310Найдено $havtot файлов BogusQuestion."
+       } else {  putserv "PRIVMSG $nk :\00310Найдено $havtot файлов BogusQuestion: [join $jusfls]"  }
        set t2(-newfiles) [linsert $havnew 0 $havtot:0:-:0:-:-1:0 $frmt]
        TDoAdd 1 $nk:$uh:$hn $iskaos
      } else {  set frmt $t2(layout)
-       if {$havtot=="1"} {  putserv "PRIVMSG $nk :\00310Found one NewQuestion file: [join $jusfls]"
-       } elseif {$havtot>"4"} {  putserv "PRIVMSG $nk :\00310Found $havtot NewQuestion files."
-       } else {  putserv "PRIVMSG $nk :\00310Found $havtot NewQuestion files: [join $jusfls]"  }
+       if {$havtot=="1"} {  putserv "PRIVMSG $nk :\00310Найден один файл NewQuestion: [join $jusfls]"
+       } elseif {$havtot>"4"} {  putserv "PRIVMSG $nk :\00310Найдено $havtot файлов NewQuestion."
+       } else {  putserv "PRIVMSG $nk :\00310Найдено $havtot файлов NewQuestion: [join $jusfls]"  }
        set t2(-newfiles) [linsert $havnew 0 $havtot:0:-:0:-:-1:0 $frmt]
        TDoAdd 0 $nk:$uh:$hn $iskaos
      }
-   } else { putserv "PRIVMSG $nk :\00310No New Question Files Found...." }
+   } else { putserv "PRIVMSG $nk :\00310Новых файлов вопросов не найдено...." }
  } elseif {[string match -nocase $t2(chan) $tx]} {
  } else {
    if {[string match -nocase .add $cmd] || [string match -nocase .addk $cmd]} {
@@ -3296,7 +3296,7 @@ proc TAdd {nk uh hn tx {opt 0} } {  global t2 tclr botnick
          }
        }
        if {$err>"0"} {
-         putserv "PRIVMSG $nk :\00310.add Error: Not a valid question format: $fmt"
+         putserv "PRIVMSG $nk :\00310.add Ошибка: неверный формат вопроса: $fmt"
          return 0
        } else {
          if {[string length $frmt]=="5"} {
@@ -3316,15 +3316,15 @@ proc TAdd {nk uh hn tx {opt 0} } {  global t2 tclr botnick
         } else {  break  }
        }
        if {$havtot=="1"} {
-         putserv "PRIVMSG $nk :\00310Found one NewQuestion file: [join $jusfls]"
+         putserv "PRIVMSG $nk :\00310Найден один файл NewQuestion: [join $jusfls]"
        } elseif {$havtot>"4"} {
-         putserv "PRIVMSG $nk :\00310Found $havtot NewQuestion files."
+         putserv "PRIVMSG $nk :\00310Найдено $havtot файлов NewQuestion."
        } else {
-         putserv "PRIVMSG $nk :\00310Found $havtot NewQuestion files: [join $jusfls]"
+         putserv "PRIVMSG $nk :\00310Найдено $havtot файлов NewQuestion: [join $jusfls]"
        }
        set t2(-newfiles) [linsert $havnew 0 $havtot:0:-:0:-:-1:0 $frmt]
        set t2(-kopen) ""  ;  TDoAdd 0 $nk:$uh:$hn $iskaos
-     } else { putserv "PRIVMSG $nk :\00310No New Question Files Found...." }
+     } else { putserv "PRIVMSG $nk :\00310Новых файлов вопросов не найдено...." }
    }
  }
  return 0
@@ -3342,8 +3342,8 @@ proc TDoAdd { {mine 0} {othr 0} {iskaos -1} } {  global t2 tclr botnick
    } else {  incr curf  }
  } elseif {$mine>"2"} { 
    set cftmp [lindex [split [lindex $t2(-newfiles) [expr {$curf+1}]] /] end]
-   putserv "PRIVMSG $nk :\00310No questions added from: $cftmp"
-   putserv "PRIVMSG $nk :File left unchanged."
+   putserv "PRIVMSG $nk :\00310Не добавлено вопросов из: $cftmp"
+   putserv "PRIVMSG $nk :Файл оставлен без изменений."
    if {$mine=="3"} {  incr curf  ;  set mine 0
    } else {  set curf [expr {$totf+2}]  }
  }
@@ -3364,38 +3364,38 @@ proc TDoAdd { {mine 0} {othr 0} {iskaos -1} } {  global t2 tclr botnick
                if {$hadb=="-"} {  set hadb $was1  }  ;  set bcnt 0
                puts $t2(-openbad) ":Add:[unixtime] $nk $uh $hn\n: [ctime [unixtime]]\n-"
              }
-             puts $t2(-openbad) ":BadFile: $file\n: $error errors in 1st 3 lines. File left unchanged.\n-"
+             puts $t2(-openbad) ":BadFile: $file\n: $error errors in 1st 3 lines. Файл оставлен без изменений.\n-"
              if {$curf>"1"} {  putserv "PRIVMSG $nk : "  }
-             putserv "PRIVMSG $nk :\00310$error \00305Errors\00310 in first 3 lines of file: $file"
-             putserv "PRIVMSG $nk :No questions added from: [lindex [split $file /] end]"
+             putserv "PRIVMSG $nk :\00310$error \00305ошибок\00310 в первых 3 строках файла: $file"
+             putserv "PRIVMSG $nk :Не добавлено вопросов из: [lindex [split $file /] end]"
              set thiscnt -1  ;  break
            } else {
              if {$mine=="0"} {
                if {$curf>"1"} {  putserv "PRIVMSG $nk : "  }
-               if {$iskaos=="1"} {  putserv "PRIVMSG $nk :\00310Read KAOS File: $file"
-               } else {  putserv "PRIVMSG $nk :\00310Read Question File: $file"  }
-               putserv "PRIVMSG $nk :Show first 3 lines using format: $fmt" ; set qlnum 0
+               if {$iskaos=="1"} {  putserv "PRIVMSG $nk :\00310Прочитан файл KAOS: $file"
+               } else {  putserv "PRIVMSG $nk :\00310Прочитан файл вопросов: $file"  }
+               putserv "PRIVMSG $nk :Первые 3 строки в формате: $fmt" ; set qlnum 0
                foreach qeslin $lastlin {  incr qlnum  ;  set qeslin [split $qeslin *]
                 putserv "PRIVMSG $nk :#$qlnum:\0030,10 [lindex $qeslin 0] "
                 if {$iskaos=="1" || [string match KAOS:* [lindex $qeslin 0]]} {
-                  putserv "PRIVMSG $nk :Answer1: [lindex $qeslin 1]"
-                } else {  putserv "PRIVMSG $nk :Answer: [lindex $qeslin 1]"  }
+                  putserv "PRIVMSG $nk :Ответ1: [lindex $qeslin 1]"
+                } else {  putserv "PRIVMSG $nk :Ответ: [lindex $qeslin 1]"  }
                 if {[llength $qeslin]>"2"} {  set anum 2  ;  set aand 0
                   foreach anstmp [lrange $qeslin 2 end] {
                    if {$iskaos=="1" || [string match KAOS:* [lindex $qeslin 0]]} {
-                    if {$anum<"4"} {  putserv "PRIVMSG $nk :Answer$anum: $anstmp"
+                    if {$anum<"4"} {  putserv "PRIVMSG $nk :Ответ$anum: $anstmp"
                     } else {
-                      if {[llength $qeslin]=="5"} {  putserv "PRIVMSG $nk :Answer$anum: $anstmp"
+                      if {[llength $qeslin]=="5"} {  putserv "PRIVMSG $nk :Ответ$anum: $anstmp"
                       } else {  incr aand  }
                     }
                     incr anum
-                   } else {  putserv "PRIVMSG $nk :AltAnswer: $anstmp"  }
+                   } else {  putserv "PRIVMSG $nk :АльтОтвет: $anstmp"  }
                   }
-                  if {$aand>"0"} {  putserv "PRIVMSG $nk :and $aand other kaos answers."  }
+                  if {$aand>"0"} {  putserv "PRIVMSG $nk :и ещё $aand каос-ответов."  }
                 }
                }
-               putserv "PRIVMSG $nk :\00310Is This Correct?  Type: yes or no"
-               if {$curf>"2"} {  putserv "PRIVMSG $nk :Or use: yes all or: no all :to do all remaining files:)"  }
+               putserv "PRIVMSG $nk :\00310Всё верно?  Напиши: yes или no"
+               if {$curf>"2"} {  putserv "PRIVMSG $nk :Или: yes all либо no all :для всех оставшихся файлов:)"  }
                set t2(-newfiles) [linsert [lrange $t2(-newfiles) 1 end] 0 $totf:$curf:$wson:$ncnt:$hadb:$bcnt:$gcnt]
                close $qesfil  ;  set t2(-iskadd) $iskaos
                bind msgm $t2(mflag) y* TReply  ;  bind msgm $t2(mflag) n* TReply
@@ -3403,13 +3403,13 @@ proc TDoAdd { {mine 0} {othr 0} {iskaos -1} } {  global t2 tclr botnick
                lappend t2(-reply) $nk 1 $rtimr y:n:  ;  return 0
              } else {  TCntQes  ;  incr gcnt
                if {$t2(-ison)=="1"} { TOnOff $nk $uh $hn $t2(chan) 0 2 ; set wason 1
-                 putquick "PRIVMSG $t2(chan) :Game Stopped. Adding Questions..."
-                 putserv "PRIVMSG $nk :BogusTrivia Game Stopped..."
+                 putquick "PRIVMSG $t2(chan) :Игра остановлена. Добавляю вопросы..."
+                 putserv "PRIVMSG $nk :Игра BogusTrivia остановлена..."
                } else { set wason 0 }
                if {$wson=="-"} { set wson $wason }
                if {$mine=="1"} {
                  if {$curf>"1"} {  putserv "PRIVMSG $nk : "  }
-                 putserv "PRIVMSG $nk :\00310Read Question File: $file"
+                 putserv "PRIVMSG $nk :\00310Прочитан файл вопросов: $file"
                }
                if {$t2(-qtotal)=="0"} {  set lincnt 0  ;  set putfcnt "000"
                  set putfil [open $t2(qfpath)t2.qf.000 w]
@@ -3590,17 +3590,17 @@ proc TDoAdd { {mine 0} {othr 0} {iskaos -1} } {  global t2 tclr botnick
         if {$errcnt>"0"} {  set qadded [expr {$thiscnt-$errcnt}]
         } else {  set qadded $thiscnt  }
         if {$kaoscnt=="0"} {
-          putserv "PRIVMSG $nk :Adding $qadded new questions to the database..."
+          putserv "PRIVMSG $nk :Добавляю $qadded новых вопросов в базу..."
         } else {
           if {$kaoscnt==$qadded} {
-            putserv "PRIVMSG $nk :Adding $qadded new KAOS to the database..."
+            putserv "PRIVMSG $nk :Добавляю $qadded новых KAOS в базу..."
           } else {  set tqa [expr {$qadded-$kaoscnt}]
-            putserv "PRIVMSG $nk :Adding $tqa questions & $kaoscnt KAOS to the database..."
+            putserv "PRIVMSG $nk :Добавляю $tqa вопросов и $kaoscnt KAOS в базу..."
           }
           incr t2(-kadded) $kaoscnt
         }
         if {$errcnt>"0"} {
-          putserv "PRIVMSG $nk :Wrote $errcnt possible error lines to file: $t2(sfpath)t2.badqes"
+          putserv "PRIVMSG $nk :Записал $errcnt возможных ошибочных строк в файл: $t2(sfpath)t2.badqes"
         }
         break
       }
@@ -3622,30 +3622,30 @@ proc TDoAdd { {mine 0} {othr 0} {iskaos -1} } {  global t2 tclr botnick
    putserv "PRIVMSG $nk : "
    if {$gcnt>"1"} {
      if {$t2(-kadded)=="0"} {
-       putserv "PRIVMSG $nk :\00310Totals: $ncnt questions added from $gcnt files."
+       putserv "PRIVMSG $nk :\00310Итого: $ncnt вопросов добавлено из $gcnt файлов."
      } else {
        if {$t2(-kadded)==$ncnt} {
-         putserv "PRIVMSG $nk :\00310Totals: $ncnt KAOS added from $gcnt files."
+         putserv "PRIVMSG $nk :\00310Итого: $ncnt KAOS добавлено из $gcnt файлов."
        } else {  set tqa [expr {$ncnt-$t2(-kadded)}]
-         putserv "PRIVMSG $nk :\00310$tqa questions & $t2(-kadded) KAOS added from $gcnt files."
+         putserv "PRIVMSG $nk :\00310$tqa вопросов и $t2(-kadded) KAOS добавлено из $gcnt файлов."
        }
      }
      set tottmp "      :"
-   } else {  set tottmp "\00310Totals:"  }
+   } else {  set tottmp "\00310Итого:"  }
    unset t2(-kadded)  ;  if {[info exists t2(-iskadd)]} {  unset t2(-iskadd)  }
    if {$t2(-ktotal)=="0"} {
-     putserv "PRIVMSG $nk :$tottmp $t2(-qtotal) questions now in the database."
+     putserv "PRIVMSG $nk :$tottmp $t2(-qtotal) вопросов теперь в базе."
    } elseif {$t2(-qtotal)=="0"} {
-     putserv "PRIVMSG $nk :$tottmp $t2(-ktotal) KAOS now in the database."
+     putserv "PRIVMSG $nk :$tottmp $t2(-ktotal) KAOS теперь в базе."
    } else {
      if {$gcnt>"1"} {  set tottmp ""  } else {  set tottmp "\00310"  }
-     putserv "PRIVMSG $nk :$tottmp$t2(-qtotal) questions & $t2(-ktotal) KAOS now in the database."
+     putserv "PRIVMSG $nk :$tottmp$t2(-qtotal) вопросов и $t2(-ktotal) KAOS теперь в базе."
    }
    if {$bcnt>"0"} {
-     putserv "PRIVMSG $nk :      : $bcnt error lines wrote to $t2(sfpath)t2.badqes"
+     putserv "PRIVMSG $nk :      : $bcnt ошибочных строк записано в $t2(sfpath)t2.badqes"
    }
    if {$wson=="1"} {
-     putserv "PRIVMSG $nk : " ; putserv "PRIVMSG $nk :\00310Restarting BogusTrivia..."
+     putserv "PRIVMSG $nk : " ; putserv "PRIVMSG $nk :\00310Перезапуск BogusTrivia..."
      TOnOff $nk $uh $hn $t2(chan) 1 1
    }
    return 0
@@ -3798,17 +3798,17 @@ proc TDoBad { {opt 0} {mor 0} } {  global t2
 }
 proc TMix {nk uh hn tx {times 0} {wason 0} {todo 0} } {  global t2 tclr botnick
  if {![file exists $t2(qfpath)]} {
-   putserv "PRIVMSG $nk :BogusTrivia Not Properly Set Up."
-   putserv "PRIVMSG $nk :Type: .setup to do trivia setup now."  ;  return 0  }
+   putserv "PRIVMSG $nk :BogusTrivia настроена неправильно."
+   putserv "PRIVMSG $nk :Напиши: .setup для настройки викторины."  ;  return 0  }
  if {![file exists $t2(sfpath)t2.commands]} {
-   putserv "PRIVMSG $nk :Can't find t-2.tcl commands file: $t2(sfpath)t2.commands"
-   putserv "PRIVMSG $nk :BogusTrivia .mix command disabled."  ;  return 0  }
+   putserv "PRIVMSG $nk :Не найден файл команд t-2.tcl: $t2(sfpath)t2.commands"
+   putserv "PRIVMSG $nk :Команда .mix BogusTrivia отключена."  ;  return 0  }
  set dir [string trimright $t2(qfpath) /]
  set qfills [glob -directory $dir -nocomplain t2.qf.*]
  set kfills [lsort [glob -directory $dir -nocomplain t2.kf.*]]
  if {$qfills=="" && $kfills==""} {
-   putserv "PRIVMSG $nk :No Questions in the Database."
-   putserv "PRIVMSG $nk :Type: .add  to load questions now."  ;  return 0  }
+   putserv "PRIVMSG $nk :В базе нет вопросов."
+   putserv "PRIVMSG $nk :Напиши: .add чтобы загрузить вопросы."  ;  return 0  }
  array set t2 [list _cm m _nk $nk _uh $uh _hn $hn _tx $tx _ti $times]
  array set t2 [list _wo $wason _td $todo _qfl $qfills _kfl $kfills]
  source $t2(sfpath)t2.commands
@@ -4175,4 +4175,4 @@ if {![string match *Bogus* ${ctcp-version}]} {
 }
 array unset ttmp
 
-putlog "$tclr(-msg)$t2(script)$tclr(-emsg) Loaded."
+putlog "$tclr(-msg)$t2(script)$tclr(-emsg) загружена."

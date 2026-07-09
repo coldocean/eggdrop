@@ -1598,31 +1598,31 @@ if {$t2(_cm) eq "m"} {
      if {$t2(_wt)=="q"} {  set t2(_tm) " for Questions."
      } elseif {$t2(_wt)=="k"} {  set t2(_tm) " for Kaos."
      } else {  set t2(_tm) "."  }
-     putserv "PRIVMSG $t2(_nk) :Mix Disabled$t2(_tm) Requires a larger database."
+     putserv "PRIVMSG $t2(_nk) :Микс отключён$t2(_tm) Требуется большая база."
      set t2(_tm) "The .mix command currently requires a minimum of"
      if {$t2(_wt)!=""} {  set t2(_tm) [string replace $t2(_tm) 7 8 "x $t2(_wt) "]  }
-     if {$t2(_wt)=="k"} {  putserv "PRIVMSG $t2(_nk) :$t2(_tm) 100 kaos to function."
+     if {$t2(_wt)=="k"} {  putserv "PRIVMSG $t2(_nk) :$t2(_tm) 100 каос для работы."
      } elseif {$t2(_er)>"1" && $t2(_wt)==""} {
-       putserv "PRIVMSG $t2(_nk) :$t2(_tm) 3500 questions and/or 100 kaos to function."
-     } else {  putserv "PRIVMSG $t2(_nk) :$t2(_tm) 3500 questions to function."  }
+       putserv "PRIVMSG $t2(_nk) :$t2(_tm) 3500 вопросов и/или 100 каос для работы."
+     } else {  putserv "PRIVMSG $t2(_nk) :$t2(_tm) 3500 вопросов для работы."  }
      array unset t2 _*  ;  return 2
    } elseif {$t2(_er)=="2"} {
-     putserv "PRIVMSG $t2(_nk) :Mix Disabled for Koas. Requires 100+ to function."
+     putserv "PRIVMSG $t2(_nk) :Микс каос отключён. Требуется 100+."
    } elseif {$t2(_er)=="1"} {
-     putserv "PRIVMSG $t2(_nk) :Mix Disabled for Questions. Requires 3500+ to function."
+     putserv "PRIVMSG $t2(_nk) :Микс вопросов отключён. Требуется 3500+."
    }
    if {$t2(-ison)=="1"} {  TOnOff $t2(_nk) $t2(_uh) $t2(_hn) $t2(chan) 0 1
-     putquick "PRIVMSG $t2(chan) :Game Stopped. Mixing Questions..." ; set t2(_wo) 1
+     putquick "PRIVMSG $t2(chan) :Игра остановлена. Перемешиваю вопросы..." ; set t2(_wo) 1
    }
  }
  incr t2(_ti)
  if {[lindex $t2(_td) 0]=="ques"} {  set t2(_dbl) $t2(_qfl)
    if {$t2(_tx)=="+"} {
-     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Thoroughly Mixing Questions..."  }
-putserv "PRIVMSG $t2(_nk) :mix+ dont work. Mixing questions 4 times..." ; set t2(_tx) 4
+     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Тщательно перемешиваю вопросы..."  }
+putserv "PRIVMSG $t2(_nk) :mix+ не работает. Перемешиваю вопросы 4 раза..." ; set t2(_tx) 4
    } else {
-     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Mixing questions $t2(_tx) times..."
-     } else {  putserv "PRIVMSG $t2(_nk) :Question mix #$t2(_ti)..."  }
+     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Перемешиваю вопросы $t2(_tx) раз..."
+     } else {  putserv "PRIVMSG $t2(_nk) :Микс вопросов #$t2(_ti)..."  }
    }
  } else {  set t2(_dbl) $t2(_kfl)  ;  set t2(_kcl) ""
    if {$t2(-ktotal)<"3999"} {
@@ -1632,11 +1632,11 @@ putserv "PRIVMSG $t2(_nk) :mix+ dont work. Mixing questions 4 times..." ; set t2
      }
    }
    if {$t2(_tx)=="+"} {
-     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Thoroughly Mixing Kaos..."  }
-putserv "PRIVMSG $t2(_nk) :mix+ dont work. Mixing kaos 4 times..." ; set t2(_tx) 4
+     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Тщательно перемешиваю каос..."  }
+putserv "PRIVMSG $t2(_nk) :mix+ не работает. Перемешиваю каос 4 раза..." ; set t2(_tx) 4
    } else {
-     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Mixing kaos $t2(_tx) times..."
-     } else {  putserv "PRIVMSG $t2(_nk) :Kaos mix #$t2(_ti)..."  }
+     if {$t2(_ti)=="1"} {  putserv "PRIVMSG $t2(_nk) :Перемешиваю каос $t2(_tx) раз..."
+     } else {  putserv "PRIVMSG $t2(_nk) :Микс каос #$t2(_ti)..."  }
    }
  }
  set t2(_qfc) [llength $t2(_dbl)]
