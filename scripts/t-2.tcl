@@ -127,7 +127,7 @@
 # 25. Player Matching System On or Off (stops points theft abuse) #
 # 26. Accurate Scores Totals.                                     #
 # 27. Support for non-english characters in answers               #
-#     examples:  � � � � �                                        #
+#     examples:  � � � � �                                        #
 # 28. User file clean up. remove players not seen in x amount     #
 #     of time                                                     #
 # 29. Restart game play on rejoin                                 #
@@ -1183,9 +1183,9 @@ proc TChar {how chr} {
   if {$how=="1" || $how=="2"} { return 0 }
  }
  if {$how=="1"} {
-  if {[string match {[A-Za-z0-9]} $chr]} { return 1 } else { return 0 }
+  if {[string is alnum -strict $chr]} { return 1 } else { return 0 }
  } elseif {$how=="2"} {
-  if {[string match {[aeiouAEIOU]} $chr]} { return 1 } else { return 0 }
+  if {[string match {[aeiouAEIOUаеёиоуыэюяАЕЁИОУЫЭЮЯ]} $chr]} { return 1 } else { return 0 }
  }
  return $chr
 }
