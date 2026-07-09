@@ -1,0 +1,151 @@
+body {
+background-color: #ecf1ef;
+color: #009393;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:600;
+font-size: 11px;
+scrollbar-base-color:#009393;
+scrollbar-arrow-color:#000000;
+scrollbar-DarkShadow-Color:#65B1B1;
+}
+
+html { 
+scrollbar-base-color:#009393;
+scrollbar-arrow-color:#000000;
+scrollbar-DarkShadow-Color:#65B1B1;
+}
+
+p {
+color: #009393;
+font-weight: 600;
+}
+
+h3 {
+font-size: 16px;
+text-align: center;
+}
+
+h5 {
+color: #000;
+text-align: left;
+font-size: 11px;
+margin-bottom: -1px;
+}
+
+a {
+font-size: 11px;
+font-weight: 600;
+}
+
+a:link {
+color: #009393;
+}
+
+a:visited {
+color: #009393;
+}
+
+a:hover {
+color: #20b2aa;
+}
+
+table {
+border: 1px solid;
+border-color: #009393;
+background-color: #f5f5f5;
+color: #00007F;
+}
+
+td {
+border-color: #009393;
+font-weight: 900;
+line-height: 1.5em;
+}
+
+th {
+color: #fff;
+font-weight: bold;
+line-height: 1.6em;
+}
+
+.colg1 {
+width: 12%;
+}
+
+.colg2 {
+width: 35%;
+}
+
+.colg3 {
+width: 35%;
+}
+
+.thead {
+}
+
+ .tcolhd {
+}
+
+.btable {
+width: 100%;
+padding-bottom: 10px;
+background-color: #ecf1ef;
+border: 1px solid #009393;
+}
+
+.thd {
+color: #009393;
+text-align: center;
+line-height: 1.8em;
+font-size: 11px;
+}
+
+/*changes #rank color */
+.td1 {
+background-color: #20b2aa;
+color: yellow;
+}
+
+.td2 {
+float: right;
+padding-top: 10px;
+}
+
+.bhead {
+}
+
+.bcolhd {
+ background-color: #20b2aa;
+ }
+
+.tstats {
+}
+
+.browone {
+text-align: left;
+padding-left: 6px;
+}
+
+.browtwo {
+}
+
+/* more stats link */
+.statlink {
+float: right;
+padding: 3px;
+font-size: 9px;
+}
+
+.statleft {
+float: left;
+padding: 3px;
+font-size: 9px;
+}
+
+.linkback {
+font-size: x-small;
+float: right;
+}
+
+.tft {
+}

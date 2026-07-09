@@ -5,7 +5,7 @@
 # while the dedicated promo bots HellGatesElf / demonEgg run it).
 #
 # Interval (minutes) from env RADIO_PROMO_MIN (default 15).
-# Site: https://demon.digitalslayer.com  (Hell Gates Radio / CyberPlayer)
+# Site: https://ds.digitalslayer.com  (Hell Gates Radio / CyberPlayer)
 
 namespace eval radio {
     variable enabled 0
@@ -15,7 +15,7 @@ namespace eval radio {
         set v [string trim $::env(RADIO_PROMO_MIN)]
         if {[string is integer -strict $v] && $v > 0} { set interval $v }
     }
-    variable site "https://demon.digitalslayer.com"
+    variable site "https://ds.digitalslayer.com"
     variable idx 0
 
     # curated underground stations grouped by genre, each as
@@ -80,7 +80,7 @@ proc radio::schedule {} {
     }
     # eggdrop 'timer' is in minutes; reschedule itself each fire
     timer $interval [list radio::tick]
-    putlog "radiopromo.tcl loaded — every $interval min -> demon.digitalslayer.com"
+    putlog "radiopromo.tcl loaded — every $interval min -> ds.digitalslayer.com"
 }
 
 proc radio::tick {} {
