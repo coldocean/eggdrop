@@ -1193,6 +1193,23 @@ proc TRandL {} {
  set lstr "qNwMrLtJpCsZdRfQgShFjklPzxTcWvb"
  return [string index $lstr [rand 30]]
 }
+# Mask one word for multi-word answer hints (Wunderbar).
+# reveal: 0 = mask every letter/digit ; 1 = reveal only first letter/digit ;
+#         2 = reveal all but the last letter/digit. Non-alnum kept as-is.
+proc TMaskWord {word q reveal} {
+ set chars [split $word {}]  ;  set firstal -1  ;  set lastal -1  ;  set i 0
+ foreach ch $chars {  if {[TChar 1 $ch]} {  if {$firstal<0} { set firstal $i }  ;  set lastal $i  }  ;  incr i  }
+ set out ""  ;  set i 0
+ foreach ch $chars {
+  if {[TChar 1 $ch]} {
+   if {$reveal=="1" && $i==$firstal} {  append out $ch
+   } elseif {$reveal=="2" && $i!=$lastal} {  append out $ch
+   } else {  append out $q  }
+  } else {  append out $ch  }
+  incr i
+ }
+ return $out
+}
 proc TDoNum { {num Error} } {
  switch -exact -- $num {
   0 {  return Ноль  }
@@ -2970,6 +2987,22 @@ proc TMkLines {} {  global t2 tclr botnick nick ;  set t2(-otimer) "" ;  set doq
     }
   } else {  set t2(-utrigd) 0  }
   if {$doques=="1"} {
+    # Multi-word answers: reveal the FIRST word for free, mask the rest.
+    # e.g. answer "залупа конская" opens as "залупа *******"; full answer
+    # ("залупа конская") is still required to score.
+    if {[regexp {\s} $t2(-answer)]} {
+      set twords [regexp -all -inline {\S+} $t2(-answer)]
+      if {[llength $twords]>"1"} {
+        set w1 [lindex $twords 0]  ;  set trest [lrange $twords 1 end]
+        set th1 $w1  ;  set th2 $w1  ;  set th3 $w1
+        foreach tw $trest {
+          append th1 " " [TMaskWord $tw $q 0]
+          append th2 " " [TMaskWord $tw $q 1]
+          append th3 " " [TMaskWord $tw $q 2]
+        }
+        set t2(-hint) $th1  ;  set t2(-hnt2) $th2  ;  set t2(-hnt3) $th3
+      }
+    }
     if {$isbon=="1"} {
       set pnttmp [TMkPoint $pbase $aprang $t2(-roundb) $t2(minbonus) $t2(maxbonus) b]
     } else {  set pnttmp [TMkPoint $pbase $aprang $t2(-roundq) $t2(lpoint) $t2(hpoint) q]  }
